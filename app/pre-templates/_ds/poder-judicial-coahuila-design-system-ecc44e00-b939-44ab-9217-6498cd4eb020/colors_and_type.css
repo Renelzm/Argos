@@ -1,0 +1,291 @@
+/* ==========================================================================
+   Poder Judicial Coahuila — Colors & Type
+   Official visual foundations. Use these tokens for ALL designs.
+   ========================================================================== */
+
+/* --- Font faces ----------------------------------------------------------- */
+
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arno Pro";
+  src: url("fonts/ArnoPro-Caption.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMonoNerdFont-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMonoNerdFont-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMonoNerdFont-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMonoNerdFont-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* =====================================================================
+     COLORS — from Colores Autorizados
+     ===================================================================== */
+
+  /* Official logotype colors (primary institutional palette) */
+  --pj-ink:        #39444B; /* Pantone 432 C — primary ink, crest color */
+  --pj-slate:      #4B5760; /* Pantone 6224 C — secondary slate */
+  --pj-sage:       #B4B49E; /* Pantone 6200 C — warm sage */
+  --pj-mist:       #C6CABD; /* Pantone 6198 C — pale mist (support bg) */
+
+  /* Accent colors (6105 C family — ceremonial / categorical use) */
+  --pj-blue:       #323B6B; /* deep navy */
+  --pj-green:      #486238; /* forest */
+  --pj-purple:     #5F2D71; /* imperial purple */
+  --pj-magenta:    #9E3182; /* magenta */
+
+  /* Neutral scale (Pantone Black %) */
+  --pj-black-100:  #272425; /* near-black */
+  --pj-black-75:   #646566;
+  --pj-black-50:   #939497;
+  --pj-black-25:   #C6C7C8;
+  --pj-white:      #FFFFFF;
+
+  /* =====================================================================
+     SEMANTIC ROLES
+     ===================================================================== */
+
+  /* Backgrounds */
+  --bg:            var(--pj-white);
+  --bg-muted:      #F5F5F2;       /* near-white warm */
+  --bg-subtle:     var(--pj-mist);
+  --bg-sage:       var(--pj-sage);
+  --bg-dark:       var(--pj-ink);
+  --bg-dark-2:     var(--pj-slate);
+  --bg-inverse:    var(--pj-black-100);
+
+  /* Foreground / text */
+  --fg:            var(--pj-ink);
+  --fg-muted:      var(--pj-slate);
+  --fg-subtle:     var(--pj-black-75);
+  --fg-faint:      var(--pj-black-50);
+  --fg-inverse:    var(--pj-white);
+  --fg-on-sage:    var(--pj-ink);
+
+  /* Borders & dividers */
+  --border:        rgba(57, 68, 75, 0.16);
+  --border-strong: rgba(57, 68, 75, 0.32);
+  --border-faint:  rgba(57, 68, 75, 0.08);
+  --divider:       var(--pj-black-25);
+
+  /* Accent / brand */
+  --accent:        var(--pj-ink);
+  --accent-weak:   var(--pj-sage);
+  --link:          var(--pj-slate);
+  --link-hover:    var(--pj-ink);
+
+  /* Status (derived from accent family, sober) */
+  --success:       #486238;       /* forest */
+  --warning:       #8A6D2B;       /* sober ochre (derived) */
+  --danger:        #8A2B2B;       /* sober crimson (derived) */
+  --info:          #323B6B;
+
+  /* =====================================================================
+     TYPOGRAPHY
+     ===================================================================== */
+
+  --font-display:  "Arno Pro", "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-sans:     "Gotham", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono:     ui-monospace, "SF Mono", "JetBrains Mono", Consolas, monospace;
+
+  /* Scale — sober, architectural. Uses a ~1.25 minor-third. */
+  --fs-12: 0.75rem;   /* 12 — micro caption */
+  --fs-13: 0.8125rem; /* 13 — overline */
+  --fs-14: 0.875rem;  /* 14 — small */
+  --fs-15: 0.9375rem;
+  --fs-16: 1rem;      /* 16 — body */
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-28: 1.75rem;
+  --fs-32: 2rem;
+  --fs-40: 2.5rem;
+  --fs-48: 3rem;
+  --fs-64: 4rem;
+  --fs-80: 5rem;
+
+  --lh-tight: 1.1;  /* @kind other */
+  --lh-snug:  1.25; /* @kind other */
+  --lh-normal:1.5;  /* @kind other */
+  --lh-loose: 1.7;  /* @kind other */
+
+  --tracking-tight:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.08em;
+  --tracking-wider:  0.16em;  /* for overlines / ALL-CAPS labels */
+
+  /* =====================================================================
+     SPACING, RADII, SHADOWS, LAYOUT
+     ===================================================================== */
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 6px;
+  --radius-4: 8px;
+  --radius-full: 9999px;
+
+  /* Sober, minimal shadows — elevation is rare and subtle */
+  --shadow-1: 0 1px 0 rgba(57, 68, 75, 0.06);
+  --shadow-2: 0 2px 6px rgba(57, 68, 75, 0.08), 0 1px 0 rgba(57, 68, 75, 0.04);
+  --shadow-3: 0 8px 24px rgba(57, 68, 75, 0.10), 0 2px 4px rgba(57, 68, 75, 0.04);
+  --shadow-inset: inset 0 0 0 1px rgba(57, 68, 75, 0.10);
+
+  --content-width: 1120px;
+  --content-width-wide: 1280px;
+  --content-width-narrow: 720px;
+}
+
+/* ==========================================================================
+   SEMANTIC TYPE ROLES
+   Apply these classes or copy their properties into components.
+   ========================================================================== */
+
+html { color: var(--fg); background: var(--bg); }
+body { font-family: var(--font-sans); font-size: var(--fs-16); line-height: var(--lh-normal); color: var(--fg); }
+
+.display-1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+.display-2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  color: var(--fg);
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-48);
+  line-height: var(--lh-tight);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+.h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-32);
+  line-height: var(--lh-snug);
+  font-weight: 400;
+}
+.h3 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-20);
+  line-height: var(--lh-snug);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.h4 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-16);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: var(--lh-snug);
+}
+
+.overline {
+  font-family: var(--font-sans);
+  font-size: var(--fs-12);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-13);
+  font-weight: 400;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-24);
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--fg);
+}
+
+.body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-16);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+}
+.body-sm {
+  font-family: var(--font-sans);
+  font-size: var(--fs-14);
+  line-height: 1.55;
+  color: var(--fg-muted);
+}
+.caption {
+  font-family: var(--font-sans);
+  font-size: var(--fs-12);
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 400;
+}

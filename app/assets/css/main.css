@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-gobierno: #007389;
+  --color-empresa: #1a5ccb;
+  --color-accent: #d81b60;
+}
+
+body {
+  font-family: var(--font-sans);
+}

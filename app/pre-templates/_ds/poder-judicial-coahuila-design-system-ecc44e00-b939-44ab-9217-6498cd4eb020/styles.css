@@ -1,0 +1,7 @@
+/* ==========================================================================
+   Poder Judicial Coahuila — Design System
+   Canonical global stylesheet. Consumers link THIS file; it pulls in the
+   visual foundations (tokens, @font-face, type roles).
+   ========================================================================== */
+
+@import "colors_and_type.css";
