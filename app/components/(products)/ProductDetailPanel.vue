@@ -26,7 +26,7 @@
 
       <img
         v-if="product.portrait"
-        :src="product.portrait"
+        :src="useAsset(product.portrait)"
         :alt="product.portraitAlt || product.title"
         loading="lazy"
         class="mt-6 size-full rounded-xl transition-transform duration-500 ease-out group-hover/img:scale-105 motion-reduce:transition-none motion-reduce:group-hover/img:scale-100"
@@ -80,7 +80,7 @@
         :class="[(img.aspect ?? 'video') === 'square' ? 'aspect-square' : 'aspect-video', product.images.length === 1 ? 'col-span-2' : '']"
       >
         <img
-          :src="img.src"
+          :src="useAsset(img.src)"
           :alt="img.alt || product.title"
           loading="lazy"
           class="size-full transition-transform duration-500 ease-out group-hover/img:scale-105 motion-reduce:transition-none motion-reduce:group-hover/img:scale-100"

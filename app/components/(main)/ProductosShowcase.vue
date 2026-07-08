@@ -36,7 +36,7 @@
         <div class="group overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg lg:col-span-3 lg:flex lg:flex-row-reverse dark:border-white/10 dark:bg-gray-900">
           <div class="flex items-center justify-center bg-gray-50 p-6 lg:w-2/2 lg:p-0 dark:bg-white/3">
             <img
-              :src="hero.image"
+              :src="useAsset(hero.image)"
               :alt="hero.imageAlt"
               loading="lazy"
               class="w-full rounded-lg object-contain"
@@ -68,7 +68,7 @@
         >
           <div class="group/img aspect-square overflow-hidden">
             <img
-              :src="card.image"
+              :src="useAsset(card.image)"
               :alt="card.imageAlt"
               loading="lazy"
               class="size-full object-cover transition-transform duration-500 ease-out group-hover/img:scale-105 motion-reduce:transition-none motion-reduce:group-hover/img:scale-100"
@@ -87,7 +87,7 @@
         <div class="group overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-lg lg:col-span-3 lg:flex dark:border-white/10 dark:bg-gray-900">
           <div class="flex items-center justify-center bg-gray-50 p-6 lg:w-1/2 lg:p-8 dark:bg-white/3">
             <img
-              :src="wide.image"
+              :src="useAsset(wide.image)"
               :alt="wide.imageAlt"
               loading="lazy"
               class="w-full max-w-md rounded-lg object-contain"

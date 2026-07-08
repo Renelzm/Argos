@@ -9,7 +9,7 @@
     @click="$emit('select')"
   >
     <div class="size-16 shrink-0 overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5">
-      <img :src="image" :alt="imageAlt || title" loading="lazy" class="size-full object-cover">
+      <img :src="useAsset(image)" :alt="imageAlt || title" loading="lazy" class="size-full object-cover">
     </div>
     <div class="min-w-0 flex-1">
       <span
