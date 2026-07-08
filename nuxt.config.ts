@@ -8,9 +8,8 @@ export default defineNuxtConfig({
         lang: 'es'
       }
     },
-    // Si tu repo es https://github.com/usuario/mi-proyecto
-    // Tu baseURL debe ser '/mi-proyecto/'
-  //  baseURL: process.env.NODE_ENV === 'production' ? '/' : '/',    
+    // Repo: https://github.com/Renelzm/Argos -> GH Pages sirve en /Argos/
+    baseURL: process.env.NODE_ENV === 'production' ? '/Argos/' : '/',
     // Opcional pero recomendado para transiciones suaves en GH Pages
     buildAssetsDir: 'assets', 
   },
