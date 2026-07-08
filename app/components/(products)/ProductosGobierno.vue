@@ -1,23 +1,25 @@
 <template>
   <section class="border-t border-gray-200 dark:border-white/10">
-    <div class="mx-auto max-w-6xl px-8 py-24 lg:py-32">
+    <div class="mx-auto max-w-6xl px-8 pt-12 pb-24 lg:pt-16 lg:pb-32">
       <div class="font-heading text-[13px] font-semibold tracking-[0.16em] text-gobierno">SOLUCIONES PARA GOBIERNO</div>
       <h2 class="mt-4 font-heading text-[clamp(32px,4vw,48px)] font-bold leading-[1.05] tracking-tight text-gray-900 dark:text-white">
         Un producto para cada frente de gobernanza.
       </h2>
-      <p class="mt-5 max-w-xl text-lg leading-relaxed text-gray-500 dark:text-gray-400">
-        Selecciona un módulo para ver su alcance específico dentro del ecosistema Arg.os.
-      </p>
+
+      <IntegrationsStrip class="mt-8" />
 
       <div class="mt-14 grid gap-4 lg:grid-cols-[380px_1fr] lg:items-start lg:gap-8">
         <!-- Sidebar: compact selectable list -->
         <div class="flex flex-col gap-3">
+          <p class="mb-1 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+            Selecciona un módulo para ver su alcance específico:
+          </p>
           <template v-for="(product, index) in products" :key="product.title">
             <ProductListItem
               :title="product.title"
               :eyebrow="product.eyebrow"
-              :image="product.images[0].src"
-              :image-alt="product.images[0].alt"
+              :image="product.images?.[0]?.src ?? ''"
+              :image-alt="product.images?.[0]?.alt"
               :color="product.color"
               :active="selected === index"
               @select="selected = selected === index ? null : index"
@@ -34,7 +36,7 @@
 
         <!-- Desktop only: persistent detail panel beside the list -->
         <div class="hidden lg:sticky lg:top-24 lg:block">
-          <ProductDetailPanel v-if="selected !== null" :product="products[selected]" />
+          <ProductDetailPanel v-if="selectedProduct" :product="selectedProduct" />
           <div
             v-else
             class="flex min-h-105 flex-col items-center justify-center rounded-2xl border border-dashed border-gray-300 bg-gray-50/50 px-6 py-10 text-center dark:border-white/15 dark:bg-white/2"
@@ -50,22 +52,33 @@
   </section>
 </template>
 
-<script setup>
-const products = [
+<script lang="ts" setup>
+import type { Product } from '~/types/product'
+
+const products: Product[] = [
   {
-    eyebrow: 'MONITOREO',
+    eyebrow: 'Mnemo-Síntesis',
     poweredBy: 'Mnemosine',
     title: 'Monitoreo de Medios',
-    description: 'Análisis por IA de la agenda pública local y estatal: actores políticos, tendencias y dependencias, con score de sentimiento de imagen pública y reportes entregados por asistente conversacional.',
+    description: 'Análisis por IA de la agenda pública local y estatal: actores políticos, tendencias y dependencias, con score de sentimiento de imagen pública y reportes entregados por asistente conversacional.Entrenado y alimentado diariamente por "Mnemosine", una poderosa base de datos neuronal.',
+    portrait: '/Imagenes/Monitoreo06.png',
     images: [
       {
-        src: '/Imagenes/MonitoreoMedios.jpg',
+        src: '/Imagenes/monitoreo05.967Z.png',
         alt: 'Reporte de monitoreo político entregado por un asistente conversacional, con score de sentimiento y temas principales.',
-        fit: 'contain',
-        aspect: 'square',
+       
+       
       },
       {
-        src: '/Imagenes/MonitoreoPanel.jpg',
+        src: '/Imagenes/monitoreo03.496Z.png',
+        alt: 'Panel administrativo con gráficas de menciones, alcance y sentimiento.',
+      },
+       {
+        src: '/Imagenes/monitoreo-celular.844Z.png',
+        alt: 'Panel administrativo con gráficas de menciones, alcance y sentimiento.',
+      },
+       {
+        src: '/Imagenes/Monitoreo02.239Z.png',
         alt: 'Panel administrativo con gráficas de menciones, alcance y sentimiento.',
       },
     ],
@@ -145,7 +158,8 @@ const products = [
   },
 ]
 
-const selected = ref(null)
+const selected = ref<number | null>(null)
+const selectedProduct = computed(() => (selected.value !== null ? products[selected.value] : null))
 </script>
 
 <style scoped>

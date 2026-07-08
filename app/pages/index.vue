@@ -9,6 +9,8 @@
     <!-- QUICK DATA STRIP -->
     <DataPasarela />
 
+    <!-- PRODUCT SHOWCASE -->
+    <ProductosShowcase />
     <!-- TECHNICAL PROMISE -->
   <PromesaTecnica />
     <!-- PRODUCTS -->

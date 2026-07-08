@@ -24,6 +24,14 @@
       <h3 class="mt-3 font-heading text-2xl font-semibold text-gray-900 dark:text-white">{{ product.title }}</h3>
       <p class="mt-3 text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">{{ product.description }}</p>
 
+      <img
+        v-if="product.portrait"
+        :src="product.portrait"
+        :alt="product.portraitAlt || product.title"
+        loading="lazy"
+        class="mt-6 size-full rounded-xl transition-transform duration-500 ease-out group-hover/img:scale-105 motion-reduce:transition-none motion-reduce:group-hover/img:scale-100"
+      >
+
       <div v-if="product.features?.length" class="mt-6 grid grid-cols-1 gap-x-5 gap-y-4 border-t border-gray-100 pt-6 sm:grid-cols-2 dark:border-white/10">
         <div v-for="feature in product.features" :key="feature.title" class="flex flex-col items-start gap-1.5">
           <div class="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-gray-800 dark:text-gray-100">
@@ -35,7 +43,7 @@
           <p class="pl-1 text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">{{ feature.description }}</p>
         </div>
       </div>
-
+<!--  CANALES DE COMUNICACION -->
       <div v-if="product.channels?.length" class="mt-6 border-t border-gray-100 pt-6 dark:border-white/10">
         <div class="text-[11px] font-semibold tracking-[0.14em] text-gray-400 uppercase dark:text-gray-500">Canales de comunicación</div>
         <div class="mt-3 flex flex-wrap gap-2">
@@ -64,12 +72,12 @@
         />
       </NuxtLink>
     </div>
-        <div v-if="product.images?.length" class="flex flex-col gap-3 border-t border-gray-100 p-3 dark:border-white/10 lg:flex-row lg:gap-4 lg:p-4" :class="theme.surface">
+        <div v-if="product.images?.length" class="grid grid-cols-2 gap-3 border-t border-gray-100 p-3 dark:border-white/10 lg:gap-4 lg:p-4" :class="theme.surface">
       <div
         v-for="(img, i) in product.images"
         :key="i"
-        class="group/img flex-1 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-white/10 dark:bg-gray-900"
-        :class="(img.aspect ?? 'video') === 'square' ? 'aspect-square' : 'aspect-video'"
+        class="group/img overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-white/10 dark:bg-gray-900"
+        :class="[(img.aspect ?? 'video') === 'square' ? 'aspect-square' : 'aspect-video', product.images.length === 1 ? 'col-span-2' : '']"
       >
         <img
           :src="img.src"
@@ -83,10 +91,12 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  product: { type: Object, required: true },
-})
+<script lang="ts" setup>
+import type { Product } from '~/types/product'
+
+const props = defineProps<{
+  product: Product
+}>()
 
 const theme = computed(() => useProductTheme(props.product.color))
 </script>

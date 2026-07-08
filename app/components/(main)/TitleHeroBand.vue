@@ -3,6 +3,13 @@
     <!-- barely-there ambient depth, neutral so it never competes with the mark -->
     <div class="pointer-events-none absolute top-0 left-1/2 size-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-400/8 blur-3xl dark:bg-white/5" />
 
+    <!-- neuron: single dendritic cluster; small corner accent on mobile, centered on md, tucked to the left from lg up -->
+    <div
+      class="pointer-events-none absolute top-3 right-3 h-36 w-28 opacity-55 md:top-1/2 md:right-auto md:left-1/2 md:h-80 md:w-60 md:-translate-x-1/2 md:-translate-y-1/2 lg:left-6 lg:translate-x-0 dark:opacity-35"
+    >
+      <HeroNeuronGraphic />
+    </div>
+
     <LogoMark
       :size="58"
       tone="color"

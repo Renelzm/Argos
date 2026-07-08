@@ -43,7 +43,7 @@
             <p class="font-heading text-xl font-semibold leading-snug text-gobierno">Orden y control social para una mejor gobernanza.</p>
           </div>
           <span class="mt-8 inline-flex items-center gap-3 rounded-full border border-gobierno/30 py-1.5 pr-1.5 pl-5 text-sm font-semibold text-gobierno transition-colors duration-300 motion-reduce:transition-none group-hover:border-gobierno group-hover:bg-gobierno group-hover:text-white group-focus-visible:border-gobierno group-focus-visible:bg-gobierno group-focus-visible:text-white">
-            Entrar al panel
+             Ver herramientas y soluciones 
             <span class="flex size-8 items-center justify-center rounded-full bg-gobierno/10 transition-colors duration-300 motion-reduce:transition-none group-hover:bg-white/20 group-focus-visible:bg-white/20">
               <UIcon name="i-lucide-arrow-right" class="size-4 transition-transform duration-300 ease-out motion-reduce:transform-none group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5" />
             </span>
@@ -91,7 +91,7 @@
             <p class="font-heading text-xl font-semibold leading-snug text-empresa">Eficiencia técnica para la empresa.</p>
           </div>
           <span class="mt-8 inline-flex items-center gap-3 rounded-full border border-empresa/30 py-1.5 pr-1.5 pl-5 text-sm font-semibold text-empresa transition-colors duration-300 motion-reduce:transition-none group-hover:border-empresa group-hover:bg-empresa group-hover:text-white group-focus-visible:border-empresa group-focus-visible:bg-empresa group-focus-visible:text-white">
-            Entrar al panel
+             Ver herramientas y soluciones 
             <span class="flex size-8 items-center justify-center rounded-full bg-empresa/10 transition-colors duration-300 motion-reduce:transition-none group-hover:bg-white/20 group-focus-visible:bg-white/20">
               <UIcon name="i-lucide-arrow-right" class="size-4 transition-transform duration-300 ease-out motion-reduce:transform-none group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5" />
             </span>
