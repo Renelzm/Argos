@@ -1,75 +1,53 @@
-# Nuxt Minimal Starter
+# Arg.os
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Sitio de portal/marketing para Arg.os, una empresa de soluciones de IA que vende la misma tecnología base a dos audiencias distintas:
+
+- **Gobierno** (`/gobierno`) — automatización de atención ciudadana, ruteo territorial, monitoreo de medios, chatbots ciudadanos, modernización digital.
+- **Empresas** (`/empresas`) — integración API/ERP, automatización de flujos, bots de prospección, agendamiento de ventas.
+
+Construido con [Nuxt 4](https://nuxt.com), Tailwind CSS v4 y [@nuxt/ui](https://ui.nuxt.com). Contenido del sitio en español.
 
 ## Setup
 
-Make sure to install dependencies:
-
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Desarrollo
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Sitio disponible en `http://localhost:3000`.
 
-Build the application for production:
+## Build / generación estática
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run build     # build de producción (SSR)
+npm run generate  # generación estática (usada para el deploy)
+npm run preview   # preview local de un build de producción
 ```
 
-Locally preview production build:
+No hay lint ni tests configurados todavía en este repo.
 
-```bash
-# npm
-npm run preview
+## Estructura
 
-# pnpm
-pnpm preview
+- Código fuente bajo `app/` (layout de Nuxt 4): `app/pages/`, `app/components/`, `app/layouts/`, `app/composables/`, `app/assets/`.
+- Componentes en `app/components/` son de auto-import global por nombre de archivo (`pathPrefix: false`), sin importar la subcarpeta en la que estén.
+- `app/pre-templates/` es material de referencia/diseño (no código vivo de la app).
+- Detalle de módulos y posicionamiento de producto por vertical: `app/pre-templates/modulos-proyectados.md`.
 
-# yarn
-yarn preview
+### Imágenes estáticas
 
-# bun
-bun run preview
+Las imágenes servidas desde `public/` deben referenciarse con el composable `useAsset()` (`app/composables/useAsset.ts`) en vez de una ruta cruda (`/Imagenes/...`), para que sigan funcionando tanto bajo el `baseURL` de GitHub Pages (`/Argos/`) como en un dominio propio (`/`):
+
+```vue
+<img :src="useAsset('/Imagenes/foo.jpg')" alt="...">
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Deploy
+
+El deploy a GitHub Pages es automático vía GitHub Actions (`.github/workflows/cd.yml`): cada push a `main` corre `npm run generate` y publica `.output/public` en la rama `gh-pages`.
+
+Repo: `Renelzm/Argos` → sitio publicado en `https://renelzm.github.io/Argos/`.

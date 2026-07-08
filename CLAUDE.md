@@ -33,6 +33,8 @@ There is no lint or test tooling configured in this repo yet (no ESLint/Vitest c
 - **Components auto-import** is configured with `pathPrefix: false` (`nuxt.config.ts`), so components dropped into `app/components/` (directory doesn't exist yet) are globally available by their bare filename, not prefixed by subfolder path.
 - **Styling**: Tailwind CSS v4 + `@nuxt/ui` (v4), wired via CSS-only imports in `app/assets/css/main.css` (`@import "tailwindcss"; @import "@nuxt/ui";`) rather than the legacy `tailwind.config.js` approach. The `@nuxtjs/tailwindcss` devDependency is present but the `@nuxt/ui` Nuxt module (which bundles its own Tailwind integration) is the one actually registered in `nuxt.config.ts`'s `modules`.
 - **SSR is enabled** (`ssr: true`).
+- **Deploy target is GitHub Pages** as a project site (`Renelzm/Argos` → served at `/Argos/`), via `.github/workflows/cd.yml` running `nuxt generate`. `app.baseURL` in `nuxt.config.ts` is set accordingly (`/Argos/` in production) — it will need to change to `/` if/when a custom domain is added.
+- **Images from `public/`**: any `<img>` referencing a static file (e.g. `/Imagenes/foo.jpg`) must go through the `useAsset()` composable (`app/composables/useAsset.ts`), e.g. `:src="useAsset('/Imagenes/foo.jpg')"`. A raw absolute path breaks under the GH Pages `/Argos/` base; a raw relative path breaks on nested routes. `useAsset` resolves the path against the current `app.baseURL` so it works in both cases. Data objects can keep storing plain paths (`image: '/Imagenes/foo.jpg'`) — only wrap at the point the `<img :src>` is rendered.
 
 ## `app/pre-templates/`
 

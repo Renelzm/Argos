@@ -9,11 +9,11 @@
         Prototipos desarrollados para distintas entidades: visión artificial, chatbots de atención ciudadana, automatización de trámites y paneles de datos, sobre la misma arquitectura.
       </p>
 
-      <div class="mt-7 flex flex-wrap items-center gap-3">
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
         <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Soluciones para:</span>
         <NuxtLink
           to="/gobierno"
-          class="group/cta inline-flex items-center gap-2.5 rounded-full border border-gobierno/25 bg-gobierno/5 py-1.5 pr-5 pl-1.5 text-sm font-semibold text-gobierno shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-gobierno hover:bg-gobierno hover:text-white hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gobierno focus-visible:ring-offset-2 motion-reduce:transition-colors motion-reduce:transform-none"
+          class="group/cta flex w-full items-center justify-center gap-2.5 rounded-full border border-gobierno/25 bg-gobierno/5 py-2 pr-5 pl-1.5 text-sm font-semibold text-gobierno shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-gobierno hover:bg-gobierno hover:text-white hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gobierno focus-visible:ring-offset-2 motion-reduce:transition-colors motion-reduce:transform-none sm:inline-flex sm:w-auto sm:justify-start sm:py-1.5"
         >
           <span class="flex size-7 items-center justify-center rounded-full bg-gobierno/10 transition-colors duration-300 group-hover/cta:bg-white/20 motion-reduce:transition-none">
             <UIcon name="i-lucide-landmark" class="size-3.5" />
@@ -22,7 +22,7 @@
         </NuxtLink>
         <NuxtLink
           to="/empresas"
-          class="group/cta inline-flex items-center gap-2.5 rounded-full border border-empresa/25 bg-empresa/5 py-1.5 pr-5 pl-1.5 text-sm font-semibold text-empresa shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-empresa hover:bg-empresa hover:text-white hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-empresa focus-visible:ring-offset-2 motion-reduce:transition-colors motion-reduce:transform-none"
+          class="group/cta flex w-full items-center justify-center gap-2.5 rounded-full border border-empresa/25 bg-empresa/5 py-2 pr-5 pl-1.5 text-sm font-semibold text-empresa shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-empresa hover:bg-empresa hover:text-white hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-empresa focus-visible:ring-offset-2 motion-reduce:transition-colors motion-reduce:transform-none sm:inline-flex sm:w-auto sm:justify-start sm:py-1.5"
         >
           <span class="flex size-7 items-center justify-center rounded-full bg-empresa/10 transition-colors duration-300 group-hover/cta:bg-white/20 motion-reduce:transition-none">
             <UIcon name="i-lucide-building-2" class="size-3.5" />
