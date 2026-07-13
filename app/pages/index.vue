@@ -11,6 +11,8 @@
 
     <!-- PRODUCT SHOWCASE -->
     <ProductosShowcase />
+    <!-- LIVE DEMOS -->
+    <DemosEnVivo />
     <!-- TECHNICAL PROMISE -->
   <PromesaTecnica />
     <!-- PRODUCTS -->
