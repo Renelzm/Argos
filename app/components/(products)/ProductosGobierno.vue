@@ -6,7 +6,7 @@
         Un producto para cada frente de gobernanza.
       </h2>
 
-      <div class="mt-14 grid gap-4 lg:grid-cols-[380px_1fr] lg:items-start lg:gap-8">
+      <div class="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-[380px_1fr] lg:items-start lg:gap-8">
         <!-- Sidebar: compact selectable list -->
         <div class="flex flex-col gap-3">
           <p class="mb-1 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
