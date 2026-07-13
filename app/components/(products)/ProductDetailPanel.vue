@@ -59,6 +59,35 @@
         </div>
       </div>
 
+      <div v-if="product.showcases?.length" class="mt-6 border-t border-gray-100 pt-6 dark:border-white/10">
+        <div class="text-[11px] font-semibold tracking-[0.14em] text-gray-400 uppercase dark:text-gray-500">Demos en vivo</div>
+        <div class="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <a
+            v-for="(showcase, i) in product.showcases"
+            :key="i"
+            :href="showcase.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group/showcase flex items-center gap-3 overflow-hidden rounded-xl border border-gray-200 bg-white p-2 shadow-sm transition-colors duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 motion-reduce:transition-none dark:border-white/10 dark:bg-gray-900"
+            :class="theme.ring"
+          >
+            <div v-if="showcase.image" class="size-14 shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-white/5">
+              <img
+                :src="useAsset(showcase.image)"
+                :alt="showcase.imageAlt || showcase.label"
+                loading="lazy"
+                class="size-full object-cover transition-transform duration-500 ease-out group-hover/showcase:scale-105 motion-reduce:transition-none motion-reduce:group-hover/showcase:scale-100"
+              >
+            </div>
+            <span class="min-w-0 flex-1 truncate text-[13px] font-semibold text-gray-700 dark:text-gray-200">{{ showcase.label }}</span>
+            <UIcon
+              name="i-lucide-external-link"
+              class="size-4 shrink-0 text-gray-400 transition-transform duration-300 ease-out group-hover/showcase:translate-x-0.5 motion-reduce:transition-none dark:text-gray-500"
+            />
+          </a>
+        </div>
+      </div>
+
       <NuxtLink
         v-if="product.to"
         :to="product.to"

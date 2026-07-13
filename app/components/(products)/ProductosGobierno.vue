@@ -16,8 +16,8 @@
             <ProductListItem
               :title="product.title"
               :eyebrow="product.eyebrow"
-              :image="product.images?.[0]?.src ?? ''"
-              :image-alt="product.images?.[0]?.alt"
+              :image="product.thumbnail ?? product.images?.[0]?.src ?? product.portrait ?? ''"
+              :image-alt="product.thumbnailAlt ?? product.images?.[0]?.alt ?? product.portraitAlt"
               :color="product.color"
               :active="selected === index"
               @select="selected = selected === index ? null : index"
@@ -82,7 +82,7 @@ const products: Product[] = [
         alt: 'Panel administrativo con gráficas de menciones, alcance y sentimiento.',
       },
     ],
-    to: '/',
+    to: 'https://datastudio.google.com/u/0/reporting/14682381-bff1-48d9-80f4-00dac737b748/page/JlIxF',
     color: 'gobierno',
     features: [
       {
@@ -142,19 +142,450 @@ const products: Product[] = [
         chipClass: 'bg-gobierno/10',
       },
     ],
-  },
-  {
-    eyebrow: 'MONITOREO',
-    title: 'Panel de Seguimiento',
-    description: 'Tablero ejecutivo con menciones, alcance y sentimiento por canal de comunicación, para la toma de decisiones en tiempo real.',
-    images: [
+    showcases: [
       {
-        src: '/Imagenes/MonitoreoPanel.jpg',
-        alt: 'Panel de indicadores de monitoreo de medios con gráficas de menciones, alcance y sentimiento.',
+        label: 'Monitoreo de medios en vivo',
+        url: 'https://datastudio.google.com/u/0/reporting/14682381-bff1-48d9-80f4-00dac737b748/page/JlIxF',
+        image: '/Imagenes/PanelMonitoreoM.png',
       },
     ],
-    to: '/',
+  },
+  {
+    eyebrow: 'Atlas',
+    title: 'Gestión Urbana Integral',
+    description: 'Plataforma ecosistémica integral para modernizar, supervisar y optimizar los servicios públicos municipales (bacheo, áreas verdes, semáforos, vialidad y luminarias), que unifica un Panel de Administración Central, un Tablero KPI y una Aplicación Móvil de campo. Combina geolocalización e información en tiempo real para optimizar rutas y recursos, dar seguimiento transparente con evidencia georreferenciada, y reaccionar de inmediato ante imprevistos viales.',
     color: 'gobierno',
+    portrait: '/Imagenes/Servicios05.png',
+    thumbnail: '/Imagenes/Servicios05.png',
+    images: [
+      {
+        src: '/Imagenes/PanelAtencionCiudadana01.png',
+        alt: 'Vista Smart Cities de atención ciudadana.',
+      },
+      {
+        src: '/Imagenes/PanelAtencionCiudadana.png',
+        alt: 'Panel de atención ciudadana.',
+      },
+      {
+        src: '/Imagenes/PanelBacheo.png',
+        alt: 'Panel de seguimiento de bacheo.',
+      },
+      {
+        src: '/Imagenes/PanelAccidentesViales.png',
+        alt: 'Panel de tránsito y vialidad.',
+      },
+      {
+        src: '/Imagenes/PanelSaludAnimal.png',
+        alt: 'Panel de registro de salud animal.',
+      },
+      {
+        src: '/Imagenes/PanelGestionesMunicipales.png',
+        alt: 'Panel de desarrollo social y apoyos.',
+      },
+    ],
+    features: [
+      {
+        icon: 'i-lucide-headset',
+        title: 'Atención ciudadana',
+        description: 'Reportes ciudadanos, asignación de órdenes de trabajo y agente virtual inteligente.',
+        chipClass: 'bg-sky-600',
+      },
+      {
+        icon: 'i-lucide-construction',
+        title: 'Bacheo',
+        description: 'Detección y reparación de baches con evidencia fotográfica georreferenciada.',
+        chipClass: 'bg-violet-600',
+      },
+      {
+        icon: 'i-lucide-car',
+        title: 'Tránsito y Vialidad',
+        description: 'Seguimiento de incidentes viales y coordinación de recursos en hora pico.',
+        chipClass: 'bg-amber-700',
+      },
+      {
+        icon: 'i-lucide-paw-print',
+        title: 'Registro de salud animal',
+        description: 'Control y seguimiento de casos de salud animal en el municipio.',
+        chipClass: 'bg-emerald-600',
+      },
+      {
+        icon: 'i-lucide-trees',
+        title: 'Parques y Jardines',
+        description: 'Gestión y mantenimiento de áreas verdes municipales.',
+        chipClass: 'bg-blue-600',
+      },
+      {
+        icon: 'i-lucide-handshake',
+        title: 'Apoyos y Gestiones',
+        description: 'Seguimiento de apoyos sociales y gestiones administrativas ciudadanas.',
+        chipClass: 'bg-rose-600',
+      },
+      {
+        icon: 'i-lucide-lightbulb',
+        title: 'Alumbrado Público',
+        description: 'Reporte y atención de fallas en el sistema de luminarias.',
+        chipClass: 'bg-teal-600',
+      },
+      {
+        icon: 'i-lucide-traffic-cone',
+        title: 'Semaforización',
+        description: 'Monitoreo y mantenimiento de la red de semáforos urbanos.',
+        chipClass: 'bg-orange-600',
+      },
+    ],
+    // Solo las sub-plataformas con demo en vivo confirmada en modulosGOB.md entran aquí.
+    showcases: [
+      {
+        label: 'Atención ciudadana - Smart Cities',
+        url: 'https://datastudio.google.com/u/0/reporting/c499568e-6577-43dc-93b5-fbe123b96442/page/vaNFF',
+        image: '/Imagenes/PanelAtencionCiudadana01.png',
+      },
+      {
+        label: 'Atención ciudadana',
+        url: 'https://datastudio.google.com/u/0/reporting/2846eca4-2760-4313-b5a1-34a4d7f9e7af/page/vaNFF',
+        image: '/Imagenes/PanelAtencionCiudadana.png',
+      },
+      {
+        label: 'Bacheo',
+        url: 'https://datastudio.google.com/reporting/95d84a6b-1d0c-4c3d-9049-faeb0632a219',
+        image: '/Imagenes/PanelBacheo.png',
+      },
+      {
+        label: 'Tránsito y Vialidad',
+        url: 'https://datastudio.google.com/reporting/2bab830a-337d-40fc-a7ff-278029fa849f',
+        image: '/Imagenes/PanelAccidentesViales.png',
+      },
+      {
+        label: 'Desarrollo Social (Apoyos)',
+        url: 'https://datastudio.google.com/u/0/reporting/6f6b79b4-0d79-4a95-a8ac-b1d76f2f2520/page/9HeJF',
+        image: '/Imagenes/PanelGestionesMunicipales.png',
+      },
+      {
+        label: 'Registro de salud animal',
+        url: 'https://datastudio.google.com/reporting/29163149-e729-435d-8094-14e427f821a0',
+        image: '/Imagenes/PanelSaludAnimal.png',
+      },
+    ],
+  },
+  // TODO: sin showcase en vivo; sin portrait definido.
+  {
+    eyebrow: 'Citizen Bots',
+    title: 'Agentes conversacionales',
+    description: 'Sistemas conversacionales omnicanal 24/7 especializados en la captación de quejas ciudadanas, reportes de servicios y recolección de propuestas para la mejora de la atención pública.',
+    color: 'gobierno',
+    features: [
+      {
+        icon: 'i-lucide-message-square-warning',
+        title: 'Quejas ciudadanas',
+        description: 'Captación de quejas ciudadanas por canal conversacional.',
+        chipClass: 'bg-sky-600',
+      },
+      {
+        icon: 'i-lucide-database',
+        title: 'Recolección de datos',
+        description: 'Recolección estructurada de datos ciudadanos.',
+        chipClass: 'bg-violet-600',
+      },
+      {
+        icon: 'i-lucide-scan-eye',
+        title: 'Identificación de imágenes con IA',
+        description: 'Análisis e identificación de imágenes enviadas por el ciudadano.',
+        chipClass: 'bg-amber-700',
+      },
+      {
+        icon: 'i-lucide-mic',
+        title: 'Entendimiento de voz',
+        description: 'Procesamiento de mensajes de voz del ciudadano.',
+        chipClass: 'bg-emerald-600',
+      },
+      {
+        icon: 'i-lucide-languages',
+        title: 'Entendimiento de lenguaje popular',
+        description: 'Comprensión de lenguaje coloquial y regional.',
+        chipClass: 'bg-blue-600',
+      },
+      {
+        icon: 'i-lucide-map-pin',
+        title: 'Georreferenciación',
+        description: 'Ubicación geográfica de reportes y quejas.',
+        chipClass: 'bg-rose-600',
+      },
+      {
+        icon: 'i-lucide-triangle-alert',
+        title: 'Reportes de fallas',
+        description: 'Captación de reportes de fallas en servicios públicos.',
+        chipClass: 'bg-teal-600',
+      },
+      {
+        icon: 'i-lucide-headset',
+        title: 'Atención ciudadana',
+        description: 'Atención conversacional directa al ciudadano.',
+        chipClass: 'bg-orange-600',
+      },
+    ],
+    channels: [
+      {
+        icon: 'i-simple-icons-whatsapp',
+        label: 'WhatsApp',
+        color: 'text-[#25D366]',
+        chipClass: 'bg-[#25D366]/10',
+      },
+      {
+        icon: 'i-simple-icons-telegram',
+        label: 'Telegram',
+        color: 'text-[#229ED9]',
+        chipClass: 'bg-[#229ED9]/10',
+      },
+      {
+        icon: 'i-lucide-globe',
+        label: 'Web',
+        color: 'text-gobierno',
+        chipClass: 'bg-gobierno/10',
+      },
+    ],
+    images: [
+      {
+        src: '/Imagenes/chatbot atc ciudana.jpg',
+        alt: 'Chatbot de atención ciudadana.',
+      },
+      {
+        src: '/Imagenes/chatbot-explicado.png',
+        alt: 'Explicación del funcionamiento del chatbot de atención ciudadana.',
+      },
+      {
+        src: '/Imagenes/monitoreo-celular.844Z.png',
+        alt: 'Chatbot de atención ciudadana en celular.',
+      },
+      {
+        src: '/Imagenes/analog to digital.397Z.png',
+        alt: 'De analógico a digital: atención ciudadana conversacional.',
+      },
+      {
+        src: '/Imagenes/Servicios02.png',
+        alt: 'Servicios de atención ciudadana.',
+      },
+      {
+        src: '/Imagenes/Servicios01.png',
+        alt: 'Servicios de atención ciudadana.',
+      },
+    ],
+  },
+  // TODO: sin showcase en vivo.
+  // aplican aquí o a otro módulo.
+  {
+    eyebrow: 'Arquímedes',
+    title: 'Automatización Administrativa',
+    description: 'Plan de modernización tecnológica: creación de oficinas electrónicas y reemplazo de flujos de trabajo en papel o humanos por nodos automatizados, reduciendo la carga laboral departamental mediante reingeniería operativa.',
+    color: 'gobierno',
+    portrait: '/Imagenes/Arquimedes01.png',
+    thumbnail: '/Imagenes/analogo a digital 2.699Z.png',
+    features: [
+      {
+        icon: 'i-lucide-repeat',
+        title: 'Automatización de procesos administrativos repetitivos',
+        description: 'Reemplazo de tareas manuales por nodos de ejecución silenciosa.',
+        chipClass: 'bg-sky-600',
+      },
+      {
+        icon: 'i-lucide-refresh-cw',
+        title: 'Reingeniería operativa',
+        description: 'Rediseño de flujos de trabajo administrativos.',
+        chipClass: 'bg-violet-600',
+      },
+      {
+        icon: 'i-lucide-file-digit',
+        title: 'Digitalización de trámites',
+        description: 'Conversión de trámites en papel a formato digital.',
+        chipClass: 'bg-amber-700',
+      },
+      {
+        icon: 'i-lucide-scan-line',
+        title: 'De papel a digital',
+        description: 'Oficinas electrónicas que sustituyen el papeleo tradicional.',
+        chipClass: 'bg-emerald-600',
+      },
+    ],
+    images: [
+      {
+        src: '/Imagenes/analogo a digital 2.699Z.png',
+        alt: 'De analógico a digital: automatización de trámites.',
+      },
+      {
+        src: '/Imagenes/analogo a digital.223Z.png',
+        alt: 'De analógico a digital: automatización de trámites.',
+      },
+      {
+        src: '/Imagenes/Servicios06.jpg',
+        alt: 'Servicios de automatización administrativa.',
+      },
+      {
+        src: '/Imagenes/analog to digital.397Z.png',
+        alt: 'De analógico a digital: automatización de trámites.',
+      },
+      {
+        src: '/Imagenes/citas y tramites.655Z.png',
+        alt: 'Automatización de citas y trámites.',
+      },
+    ],
+  },
+  // TODO: falta URL de demo en vivo para "Seguimiento de Planes y Proyectos"; falta detallar el
+  // listado completo de especialidades de modulosGOB.md (Finanzas Públicas, Obra Pública,
+  // Seguridad Pública, etc.) — se resumió a 6 features representativas.
+  {
+    eyebrow: 'Logos',
+    title: 'Consultoría',
+    description: 'Procesamiento de datos para la fundamentación y redacción de políticas públicas, trámites gubernamentales y mapeo de oportunidades de modernización gubernamental, abarcando finanzas públicas, obra pública, seguridad pública, marco jurídico y planeación estratégica, entre otras áreas.',
+    color: 'gobierno',
+    portrait: '/Imagenes/tramites-gob-fotoartecl.jpg',
+    thumbnail: '/Imagenes/tramites-gob-fotoartecl.jpg',
+    features: [
+      {
+        icon: 'i-lucide-landmark',
+        title: 'Políticas públicas',
+        description: 'Fundamentación y redacción de políticas públicas basada en datos.',
+        chipClass: 'bg-sky-600',
+      },
+      {
+        icon: 'i-lucide-file-text',
+        title: 'Trámites gubernamentales',
+        description: 'Procesamiento y análisis de trámites de gobierno.',
+        chipClass: 'bg-violet-600',
+      },
+      {
+        icon: 'i-lucide-map',
+        title: 'Mapeo de oportunidades de modernización',
+        description: 'Identificación de áreas de oportunidad para la modernización gubernamental.',
+        chipClass: 'bg-amber-700',
+      },
+      {
+        icon: 'i-lucide-siren',
+        title: 'Manejo de crisis',
+        description: 'Estrategia ante crisis políticas, normativas y mediáticas.',
+        chipClass: 'bg-emerald-600',
+      },
+      {
+        icon: 'i-lucide-building-2',
+        title: 'Reestructuración administrativa gubernamental',
+        description: 'Planeación y estrategia para la reestructuración de dependencias.',
+        chipClass: 'bg-blue-600',
+      },
+      {
+        icon: 'i-lucide-clipboard-list',
+        title: 'Encuestas',
+        description: 'Levantamiento y análisis de encuestas para la toma de decisiones.',
+        chipClass: 'bg-rose-600',
+      },
+    ],
+    images: [
+      {
+        src: '/Imagenes/PanelSeguimiento.png',
+        alt: 'Panel de seguimiento de planes y proyectos.',
+      },
+      {
+        src: '/Imagenes/consultoria01.jpg',
+        alt: 'Consultoría de datos para políticas públicas.',
+      },
+      {
+        src: '/Imagenes/consultoria02.png',
+        alt: 'Consultoría de datos para políticas públicas.',
+      },
+    ],
+    showcases: [
+      {
+        label: 'Panel Encuestas',
+        url: 'https://datastudio.google.com/reporting/83fd2af4-3f84-49da-bc53-ade545a652e5',
+        image: '/Imagenes/PanelEncuestas.png',
+      },
+      {
+        label: 'Desarrollo Social',
+        url: 'https://datastudio.google.com/reporting/2529d13b-b98a-45ce-a63d-64ba936d0fe7',
+        image: '/Imagenes/PanelDesarrolloSocial.png',
+      },
+    ],
+  },
+  // TODO: sin showcase en vivo; sin portrait definido.
+  {
+    eyebrow: 'Chronos Scheduling',
+    title: 'Gestión Ciudadana de Citas y Trámites',
+    description: 'Sistema inteligente de agendamiento omnicanal (WhatsApp/Telegram) que permite al ciudadano consultar requisitos, validar disponibilidad en tiempo real y agendar citas para trámites gubernamentales, entrega de apoyos o cualquier otro requerimiento.',
+    color: 'gobierno',
+    features: [
+      {
+        icon: 'i-lucide-calendar-clock',
+        title: 'Automatización de agenda',
+        description: 'Agendamiento automático de citas y trámites.',
+        chipClass: 'bg-sky-600',
+      },
+      {
+        icon: 'i-lucide-calendar-check',
+        title: 'Disponibilidad',
+        description: 'Validación de disponibilidad en tiempo real.',
+        chipClass: 'bg-violet-600',
+      },
+      {
+        icon: 'i-lucide-bot',
+        title: 'Asistente administrativo virtual',
+        description: 'Atención conversacional para consulta de requisitos.',
+        chipClass: 'bg-amber-700',
+      },
+      {
+        icon: 'i-lucide-file-text',
+        title: 'Trámites en general',
+        description: 'Cobertura de trámites gubernamentales y entrega de apoyos.',
+        chipClass: 'bg-emerald-600',
+      },
+    ],
+    channels: [
+      {
+        icon: 'i-simple-icons-whatsapp',
+        label: 'WhatsApp',
+        color: 'text-[#25D366]',
+        chipClass: 'bg-[#25D366]/10',
+      },
+      {
+        icon: 'i-simple-icons-telegram',
+        label: 'Telegram',
+        color: 'text-[#229ED9]',
+        chipClass: 'bg-[#229ED9]/10',
+      },
+    ],
+    images: [
+      {
+        src: '/Imagenes/citas y tramites 3.507Z.png',
+        alt: 'Chat de agendamiento de citas y trámites.',
+      },
+      {
+        src: '/Imagenes/citad.414Z.png',
+        alt: 'Chat de agendamiento de citas y trámites.',
+      },
+      {
+        src: '/Imagenes/citas y tramites 2.776Z.png',
+        alt: 'Chat de agendamiento de citas y trámites.',
+      },
+      {
+        src: '/Imagenes/Logos2.jpg',
+        alt: 'Agendamiento de citas y trámites gubernamentales.',
+      },
+    ],
+  },
+  // TODO: contenido más incompleto de los 5 — el texto fuente en modulosGOB.md corta a media
+  // oración; falta descripción completa, features adicionales, imágenes y cualquier showcase.
+  {
+    eyebrow: 'Themis-Cognitive',
+    title: 'Asistente de Consulta Normativa',
+    description: 'Prototipos rápidos de copilotos cognitivos dirigidos al servidor público que, mediante procesamiento avanzado de lenguaje natural, analizan instantáneamente leyes, reglamentos o manuales de procedimientos internos para ayudar a redactar respuestas rápidas a solicitudes de transparencia o fundamentar actas administrativas en segundos.',
+    color: 'gobierno',
+    // Sin imagen propia disponible en modulosGOB.md; se usa una imagen genérica de apoyo
+    // solo para que el producto tenga entrada visual en la lista y el panel.
+    portrait: '/Imagenes/Servicios04.png',
+    features: [
+      {
+        icon: 'i-lucide-database',
+        title: 'Vectorización de documentos',
+        description: 'Vectorización de leyes, reglamentos y manuales para consulta inmediata.',
+        chipClass: 'bg-sky-600',
+      },
+    ],
   },
 ]
 
