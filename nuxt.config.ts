@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       }
     },
     // Repo: https://github.com/Renelzm/Argos -> GH Pages sirve en /Argos/
-    baseURL: process.env.NODE_ENV === 'production' ? '/Argos/' : '/',
+    baseURL: process.env.NODE_ENV === 'production' ? '/' : '/',
     // Opcional pero recomendado para transiciones suaves en GH Pages
     buildAssetsDir: 'assets', 
   },
