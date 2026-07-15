@@ -58,5 +58,6 @@ const navLinks = [
   { label: 'Sector Público', to: '/gobierno', icon: 'i-lucide-landmark' },
   { label: 'Empresa', to: '/empresas', icon: 'i-lucide-building-2' },
   { label: 'Quiénes somos', to: '/nosotros', icon: 'i-lucide-users' },
+  { label: 'Contacto', to: '/contacto', icon: 'i-lucide-mail' },
 ]
 </script>

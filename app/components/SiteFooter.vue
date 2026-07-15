@@ -1,5 +1,5 @@
 <template>
-  <footer id="contacto" class="border-t border-gray-200 bg-white dark:border-white/10 dark:bg-gray-900">
+  <footer class="border-t border-gray-200 bg-white dark:border-white/10 dark:bg-gray-900">
     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 py-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
       <div>
         <NuxtLink to="/" class="inline-flex">
@@ -21,10 +21,8 @@
       <div>
         <div class="mb-3 text-xs font-semibold tracking-[0.14em] text-gray-400 dark:text-gray-500">CONTACTO</div>
         <div class="flex flex-col gap-2">
-          <a href="mailto:mnemosine.services@gmail.com" class="text-[14px] text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">mnemosine.services@gmail.com</a>
-          <a href="https://wa.me/528713162338" target="_blank" rel="noopener noreferrer" class="text-[14px] text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">WhatsApp: 871 316 2338</a>
-          <a href="tel:+528713162338" class="text-[14px] text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">Tel: 871 316 2338</a>
-          <a href="#contacto" class="text-[14px] text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">Agendar demostración</a>
+          <a href="mailto:argos.webservices@gmail.com" class="text-[14px] text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">argos.webservices@gmail.com</a>
+          <NuxtLink to="/contacto" class="text-[14px] text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">Más formas de contacto →</NuxtLink>
         </div>
       </div>
     </div>
