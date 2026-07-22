@@ -1,0 +1,1 @@
+import{v as i}from"./DDZHKNTs.js";function r(s){if(!s)return"";const{app:e}=i(),n=e.baseURL.endsWith("/")?e.baseURL.slice(0,-1):e.baseURL,t=s.startsWith("/")?s:`/${s}`;return`${n}${t}`}export{r as u};
