@@ -28,6 +28,10 @@
         </span>
       </a>
     </div>
+
+    <p class="mx-auto mt-8 max-w-4xl text-center text-sm text-gray-500 lg:mt-10 dark:text-gray-400">
+      ¿Aún no estás seguro por dónde empezar? Escríbenos para solicitar una demo o agendar una cita de mapeo de procesos, y te ayudamos a identificar en qué punto de tu operación conviene automatizar primero.
+    </p>
   </section>
 </template>
 

@@ -34,7 +34,7 @@
               loading="lazy"
               class="relative z-10 max-h-full max-w-full object-contain drop-shadow-md transition-transform duration-500 ease-out group-hover/img:scale-105 motion-reduce:transition-none motion-reduce:group-hover/img:scale-100"
             >
-            <div v-if="demo.channels?.some((c) => c.showLabel)" class="absolute top-2 right-2 z-20">
+            <div v-if="demo.channels?.some((c: ProductChannel) => c.showLabel)" class="absolute top-2 right-2 z-20">
               <span class="absolute inset-0.5 rounded-full bg-gobierno/20 motion-safe:animate-[ping_2.8s_ease-out_infinite]" />
               <span class="relative flex items-center gap-1 rounded-full bg-white/90 px-2 py-1 text-[10px] font-semibold shadow-sm ring-1 ring-black/5 backdrop-blur-sm dark:bg-gray-900/90 dark:ring-white/10">
                 <UIcon name="i-lucide-pencil-sparkles" class="size-3 text-gray-500 dark:text-gray-400" />
@@ -74,12 +74,22 @@
 </template>
 
 <script lang="ts" setup>
-const botIcon = { icon: 'i-lucide-bot', label: 'Bot conversacional', color: 'text-accent', chipClass: '' }
-const aiIcon = { icon: 'i-lucide-brain-circuit', label: 'Inteligencia Artificial', color: 'text-gray-700 dark:text-gray-300', chipClass: '', showLabel: 'IA' }
+import type { ProductChannel } from '~/types/product'
+
+interface Demo {
+  product: string
+  label: string
+  url: string
+  image: string
+  channels?: ProductChannel[]
+}
+
+const botIcon: ProductChannel = { icon: 'i-lucide-bot', label: 'Bot conversacional', color: 'text-accent', chipClass: '' }
+const aiIcon: ProductChannel = { icon: 'i-lucide-brain-circuit', label: 'Inteligencia Artificial', color: 'text-gray-700 dark:text-gray-300', chipClass: '', showLabel: 'IA' }
 
 // Reutilizado por Smart Cities, Bacheo y Atención ciudadana (mismo set base; Smart Cities y
 // Bacheo además agregan IA).
-const smartCitiesChannels = [
+const smartCitiesChannels: ProductChannel[] = [
   { icon: 'i-simple-icons-postgresql', label: 'PostgreSQL', color: 'text-[#336791]', chipClass: 'bg-[#336791]/10' },
   { icon: 'i-simple-icons-whatsapp', label: 'WhatsApp', color: 'text-[#25D366]', chipClass: 'bg-[#25D366]/10' },
   { icon: 'i-simple-icons-telegram', label: 'Telegram', color: 'text-[#229ED9]', chipClass: 'bg-[#229ED9]/10' },
@@ -89,7 +99,7 @@ const smartCitiesChannels = [
 ]
 
 // Reutilizado por Salud animal, Panel Encuestas, Desarrollo Social y Gestión de Apoyos.
-const statsChannels = [
+const statsChannels: ProductChannel[] = [
   { icon: 'i-simple-icons-google', label: 'Google', color: 'text-[#EA4335]', chipClass: 'bg-[#EA4335]/10' },
   { icon: 'i-simple-icons-microsoftexcel', label: 'Excel', color: 'text-[#217346]', chipClass: 'bg-[#217346]/10' },
   { icon: 'i-lucide-globe', label: 'Panel web', color: 'text-gobierno', chipClass: 'bg-gobierno/10' },
@@ -97,7 +107,7 @@ const statsChannels = [
   { icon: 'i-lucide-form-input', label: 'Formularios', color: 'text-black', chipClass: 'bg-white border border-gray-200 dark:border-white/20' },
 ]
 
-const demos = [
+const demos: Demo[] = [
   {
     product: 'Monitoreo de Medios',
     label: 'Monitoreo de medios en vivo',
@@ -113,7 +123,14 @@ const demos = [
       { icon: 'i-lucide-radio', label: 'Radio', color: 'text-gobierno', chipClass: 'bg-gobierno/10' },
       botIcon,
       aiIcon,
-    ],
+    ] as ProductChannel[],
+  },
+   {
+    product: 'Panel de Seguimiento',
+    label: ' Mapaeo de Semáforos',
+    url: 'https://datastudio.google.com/u/0/reporting/448f2469-5f35-418b-b0cd-ab660503d603/page/page_12345',
+    image: '/Imagenes/semaforos.png',
+    channels: statsChannels,
   },
   {
     product: 'Panel de Seguimiento',

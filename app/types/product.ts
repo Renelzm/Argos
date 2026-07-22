@@ -17,6 +17,7 @@ export interface ProductChannel {
   label: string
   color: string
   chipClass: string
+  showLabel?: string
 }
 
 export interface ProductShowcase {
